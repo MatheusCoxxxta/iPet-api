@@ -1,10 +1,8 @@
 const express = require('express')
 
 const app = express()
-
-app.get('/', async(req, res) => {
-    res.send({ 'message': 'Bem vindo a API do iPet'})
-})
+const routes = require('./src/Routes')
+app.use('/api', routes)
 
 app.listen(3001)
 
