@@ -40,3 +40,9 @@ Iniciando servidor
 ```
 npm run dev
 ```
+
+Acessando essa URL pelo navegador vocês conseguem ver se ta funcionando:
+
+```
+http://localhost:3001/api
+```
