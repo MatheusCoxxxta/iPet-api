@@ -26,10 +26,10 @@ module.exports = {
             const user = await User.create(req.body)
             user.password = undefined
 
-            return res.send(['Success', {
+            return res.send({
                 user,
                 token: generateToken({ id: user.id })
-            }])
+            })
         } catch (error) {
             return res.status(400).send({ message: error });
         }
