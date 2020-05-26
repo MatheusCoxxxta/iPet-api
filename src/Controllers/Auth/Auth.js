@@ -27,7 +27,7 @@ module.exports = {
             user.password = undefined
 
             return res.send({
-                user,
+                userId: user.id,
                 token: generateToken({ id: user.id })
             })
         } catch (error) {
