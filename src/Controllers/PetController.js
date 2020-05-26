@@ -5,7 +5,7 @@ const Pet = mongoose.model('Pet')
 
 module.exports = {
     async index (req, res) {
-        const pets = await Pet.find().sort({ 'createdAt': -1 })
+        const pets = await Pet.find({ ownerId: req.params.ownerId }).sort({ 'createdAt': -1 })
 
         return res.json(pets)
     },
