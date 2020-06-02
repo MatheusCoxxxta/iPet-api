@@ -60,6 +60,27 @@ module.exports = {
 
     },
 
+    /**
+     * Envio de imagens (update)
+    */
+
+    async updateImage(req, res) {
+        const { originalname: imgName, size, key, location: imgUrl = '' } = req.file;
+
+        try {
+            const image = await Pet.findByIdAndUpdate(req.params.id, {
+                imgName,
+                size,
+                key,
+                imgUrl
+            },{ new: true })
+
+            return res.json({ image })
+        } catch (error) {
+            return res.json({ message: 'Ocorreu um erro ao tentar salvar a imagem...' })
+        }
+    },
+
     async destroy (req, res) {
         try {
             const pet = await Pet.findByIdAndRemove(req.params.id)
