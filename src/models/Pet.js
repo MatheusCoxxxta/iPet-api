@@ -37,7 +37,28 @@ const PetSchema = new mongoose.Schema({
     ownerId: {
         type: String,
         required: true
-    },    
+    },
+    /**
+     * Imagem
+    */
+
+    imgName: {
+        type: String,
+        required: false
+    },
+    size: {
+        type: String,
+        required: false
+    },
+    key: {
+        type: String,
+        required: false
+    },
+    imgUrl: {
+        type: String,
+        required: false
+    },
+
     createdAt: {
         type: Date,
         default: Date.now
