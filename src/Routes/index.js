@@ -1,5 +1,7 @@
 const express = require('express')
 const routes = express.Router()
+const multer = require('multer')
+const multerConfig = require('../config/multer')
 
 const AuthController = require('../Controllers/Auth/Auth');
 const PetController = require('../Controllers/PetController');
@@ -33,5 +35,12 @@ routes.get('/pet/show/:id', PetController.show)
 routes.post('/pet/create', PetController.store)
 routes.put('/pet/update/:id', PetController.update)
 routes.delete('/pet/destroy/:id', PetController.destroy)
+
+/**
+ * Envio de imagens
+ */
+
+routes.put('/pet/upload/:id', multer(multerConfig).single('file'), PetController.updateImage)
+
 
 module.exports = routes
