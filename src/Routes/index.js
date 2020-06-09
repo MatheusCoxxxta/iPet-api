@@ -7,6 +7,8 @@ const AuthController = require('../Controllers/Auth/Auth');
 const PetController = require('../Controllers/PetController');
 const UserController = require('../Controllers/UserController');
 const VaccinateController = require('../Controllers/VaccinateController');
+const VermifugeController = require('../Controllers/VermifugeController');
+const ParasitingController = require('../Controllers/ParasitingController');
 
 routes.get('/', async(req, res) => {
     res.send({ 'message': 'Bem vindo a API do iPet'})
@@ -54,6 +56,26 @@ routes.get('/vaccinate/:pet', VaccinateController.findByPet)
 routes.post('/vaccinate/create', VaccinateController.store)
 routes.delete('/vaccinate/delete/:id', VaccinateController.destroy)
 
+/**
+ * Vermifuge Route
+*/
+
+routes.get('/vermifuge', VermifugeController.index)
+routes.get('/vermifuge/show/:id', VermifugeController.show)
+routes.get('/vermifuge/:pet', VermifugeController.findByPet)
+routes.post('/vermifuge/create', VermifugeController.store)
+routes.delete('/vermifuge/delete/:id', VermifugeController.destroy)
+
+
+/**
+ * Parasiting Route
+*/
+
+routes.get('/parasiting', ParasitingController.index)
+routes.get('/parasiting/show/:id', ParasitingController.show)
+routes.get('/parasiting/:pet', ParasitingController.findByPet)
+routes.post('/parasiting/create', ParasitingController.store)
+routes.delete('/parasiting/delete/:id', ParasitingController.destroy)
 
 
 module.exports = routes
