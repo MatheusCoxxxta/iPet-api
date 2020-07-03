@@ -58,7 +58,10 @@ const PetSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-
+    disease: {
+        type: Array,
+        required: false
+    },
     createdAt: {
         type: Date,
         default: Date.now

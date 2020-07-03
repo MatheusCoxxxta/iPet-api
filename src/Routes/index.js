@@ -12,7 +12,7 @@ const ParasitingController = require('../Controllers/ParasitingController');
 
 routes.get('/', async(req, res) => {
     res.send({ 'message': 'Bem vindo a API do iPet'})
-})
+});
 
 /**
  * Auth Routes
@@ -20,6 +20,8 @@ routes.get('/', async(req, res) => {
 
 routes.post('/auth/register', AuthController.register)
 routes.post('/auth/login', AuthController.auth)
+routes.post('/auth/forgot_password', AuthController.forgot_password);
+routes.post('/auth/reset_password', AuthController.reset_password);
 
 /**
  * User Routes
