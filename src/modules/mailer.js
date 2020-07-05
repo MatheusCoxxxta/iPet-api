@@ -4,13 +4,10 @@ const hbs = require('nodemailer-express-handlebars');
 const { host, port, secure, user, pass } = require('../config/mail.json');
 
 const transport = nodemailer.createTransport({
+    service: 'gmail',
     host,
     port,
-    //secure,
-    secureConnection: false,
-    tls: {
-        ciphers:'SSLv3'
-    },
+    secure,
     auth: { user, pass }
 });
 
