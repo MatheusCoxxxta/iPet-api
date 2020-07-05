@@ -1,7 +1,7 @@
 {
-    "host": "smtp.gmail.com",
-    "port": 465,
+    "host": "smtp-mail.outlook.com",
+    "port": 587,
     "secure": true, 
-    "user": "ipetfatec@gmail.com",
-    "pass": "iPet1234"
+    "user": "matheus2772@outlook.com.br",
+    "pass": "Mc17196569"
 }
