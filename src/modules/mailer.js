@@ -6,7 +6,8 @@ const { host, port, secure, user, pass } = require('../config/mail.json');
 const transport = nodemailer.createTransport({
     host,
     port,
-    secure,
+    //secure,
+    secureConnection: false,
     tls: {
         ciphers:'SSLv3'
     },
