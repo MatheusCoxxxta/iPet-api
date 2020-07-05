@@ -17,7 +17,7 @@ module.exports = {
     },
 
     async store (req, res) {
-        const { name, type, color, age, born, breed, castrationDate, owner, ownerId } = req.body;
+        const { name, type, color, age, born, breed, castrationDate, disease, owner, ownerId } = req.body;
 
         try {
             const pet = await Pet.create({
@@ -28,6 +28,7 @@ module.exports = {
                 born, 
                 breed, 
                 castrationDate,
+                disease,
                 owner,
                 ownerId
         })
@@ -38,7 +39,7 @@ module.exports = {
     },
 
     async update (req, res) {
-        const { name, type, color, age, born, breed, castrationDate, owner, ownerId } = req.body;
+        const { name, type, color, age, born, breed, castrationDate, disease, owner, ownerId } = req.body;
 
         try {
             const pet = await Pet.findByIdAndUpdate(req.params.id, {
@@ -49,6 +50,7 @@ module.exports = {
                 born, 
                 breed, 
                 castrationDate,
+                disease,
                 owner,
                 ownerId
             }, { new: true })
