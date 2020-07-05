@@ -1,6 +1,7 @@
 {
-    "host": "smtp.mailtrap.io",
-    "port": 2525,
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "secure": true, 
     "user": "ipetfatec@gmail.com",
     "pass": "iPet1234"
 }
